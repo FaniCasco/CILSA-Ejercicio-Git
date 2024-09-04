@@ -1,0 +1,62 @@
+***********PASOS PARA CREAR UNA RAMA, HACER CAMBIOS Y HACER MERGE*********
+
+****************1. Crear y Cambiar a la Nueva Rama:*****************
+
+1. Abre la terminal en Visual Studio Code.
+
+      2. Asegúrate de estar en la rama main
+      git checkout main
+
+      3. Actualiza la rama main para asegurarte de que esté al día con el repositorio remoto
+git pull origin main
+
+      4. Crea una nueva rama y cámbiate a ella
+git checkout -b nombre-de-la-rama
+
+
+*****************2. Hacer Cambios en la Rama:****************************
+    5. Realiza los cambios necesarios en los archivos de tu proyecto.
+
+    6. Agrega los archivos modificados al área de staging:
+     git add <archivo> / 
+           O para agregar todos los archivos modificados: git add .
+
+    7. Haz un commit de tus cambios
+     git commit -m "Descripción de los cambios"
+
+***************** 3. Subir la Rama al Repositorio Remoto:*****************
+    8. Envía la rama al repositorio remoto
+     git push origin nombre-de-la-rama
+
+***************** 4. Hacer el Merge de la Rama en main: ******************
+Cambia de nuevo a la rama main
+     git checkout main
+
+    10. Asegúrate de que la rama main esté actualizada con el repositorio remoto:
+           git pull origin main
+
+    11. Haz el merge de la rama en main
+     git merge nombre-de-la-rama
+
+    12. Si hay conflictos, resuélvelos editando los archivos afectados. Una vez resueltos, añade los archivos modificados al área de staging:
+     git add <archivo-resuelto>
+
+    13. Completa el merge con un commit (si es necesario)
+           git commit
+
+
+******************* 5. Subir los Cambios Mergeados al Repositorio Remoto:*****************
+    14. Envía los cambios mergeados a la rama main en el repositorio remoto
+           git push origin main
+
+******************* 6. (Opcional) Eliminar la Rama: **************************************
+    15. Si ya no necesitas la rama, puedes eliminarla localmente:
+           git branch -d nombre-de-la-rama
+
+    16. Y también eliminarla del repositorio remoto
+           git push origin --delete nombre-de-la-rama
+
+
+Notas Adicionales:
+Resolución de Conflictos: Durante el merge, si encuentras conflictos, edita los archivos afectados, marca los conflictos como resueltos, agrega los archivos al área de staging y luego haz un commit.
+Pruebas: Es una buena práctica ejecutar pruebas después de hacer el merge para asegurarte de que todo sigue funcionando como se espera.
