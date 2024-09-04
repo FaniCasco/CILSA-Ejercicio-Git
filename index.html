@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO GIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./formulario.css">
+</head>
+
+<body class="estilo-1">
+
+    <div class="formulario-container">
+        <h1 id="form-title">Formulario de Datos Personales</h1>
+        <form method="post" aria-labelledby="form-title">
+
+            <label for="nombre" id="label-nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+"
+                title="Por favor, ingresa solo letras y espacios." aria-required="true" aria-labelledby="label-nombre">
+
+            <label for="apellido" id="label-apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+"
+                title="Por favor, ingresa solo letras y espacios." aria-required="true"
+                aria-labelledby="label-apellido">
+
+            <label for="email" id="label-email">Email:</label>
+            <input type="email" id="email" name="email" oninput="validarEmail()" required
+                title="Por favor, ingresa un correo electrónico válido." aria-required="true"
+                aria-labelledby="label-email">
+                <div id="error-message" style="display:none; color:red;">
+                    Por favor, ingresa un correo electrónico válido.
+                </div>
+            
+
+            <label for="date" id="label-date">Fecha de Nacimiento:</label>
+            <input type="date" id="date" name="date" required title="Por favor, ingresa una fecha de nacimiento válida."
+                aria-required="true" aria-labelledby="label-date">
+
+            <label for="pais" id="label-pais">País de residencia:</label>
+            <input type="text" id="pais" name="pais" required pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+"
+                title="Por favor, ingresa solo letras y espacios." aria-required="true" aria-labelledby="label-pais">
+
+            <br>
+            <button type="submit" value="Enviar" aria-label="Enviar formulario">Enviar</button>
+
+        </form>
+        <br>
+        <button class="btn1" onclick="aplicarEstilo1()" aria-label="Aplicar estilo 1">Estilo 1</button>
+        <button class="btn2" onclick="aplicarAltoContraste()" aria-label="Aplicar estilo de alto contraste">Estilo de
+            Alto Contraste</button>
+    </div>
+
+    <script src="formulario.js"></script>
+</body>
+
+</html>
